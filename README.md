@@ -1,4 +1,4 @@
-# API KEY KULLANARAK JAVASCRIPT İSLEMLERİ
+# Pixabay API KEY KULLANARAK JAVASCRIPT İSLEMLERİ
 
 - Kullanıcı formu gönderdiğinde (submit eventi), önce arama sorgusunu alıyorum ve boşsa işlem yapmıyorum.
 
