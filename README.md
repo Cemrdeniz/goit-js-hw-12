@@ -1,4 +1,5 @@
 # API KEY KULLANARAK JAVASCRIPT İSLEMLERİ
+
 - Kullanıcı formu gönderdiğinde (submit eventi), önce arama sorgusunu alıyorum ve boşsa işlem yapmıyorum.
 
 -Daha önceki arama sonuçlarını temizliyorum ve yükleniyor göstergesini açıyorum.
