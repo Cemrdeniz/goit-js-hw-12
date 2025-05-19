@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page 2</title>
+    <style>
+      .gallery-item {
+        width: 350px;
+        display: block;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease;
+      }
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px; /* Aralığı biraz artırdım */
+        justify-content: center;
+      }
+      .gallery-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .gallery-item:hover {
+        transform: scale(1.05);
+      }
+
+      .info {
+        padding: 8px;
+        font-size: 12px;
+        color: #333;
+      }
+      .form {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      .load-more,
+      .loader {
+        display: flex;
+        justify-content: center;
+        margin: 20px auto;
+      }
+    </style>
+    <script type="module" crossorigin src="/goit-js-hw-12/assets/vendor-DFCQGEf1.js"></script>
+    <script type="module" crossorigin src="/goit-js-hw-12/assets/main-BjS0wByJ.js"></script>
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-12/assets/vendor-DumFYO8Z.css">
+  </head>
+  <body>
+    <form id="search-form">
+      <div class="form">
+        <input type="text" name="searchQuery" placeholder="Search images..." />
+        <button type="submit">Search</button>
+      </div>
+    </form>
+
+    <div class="gallery"></div>
+
+    <button class="load-more is-hidden">Load more</button>
+    <div class="loader is-hidden">Loading...</div>
+
+  </body>
+</html>

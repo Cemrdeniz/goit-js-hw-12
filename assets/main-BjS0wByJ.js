@@ -1,0 +1,12 @@
+import{a as w,i as c,S as v}from"./vendor-DFCQGEf1.js";(function(){const o=document.createElement("link").relList;if(o&&o.supports&&o.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))a(t);new MutationObserver(t=>{for(const r of t)if(r.type==="childList")for(const i of r.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&a(i)}).observe(document,{childList:!0,subtree:!0});function n(t){const r={};return t.integrity&&(r.integrity=t.integrity),t.referrerPolicy&&(r.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?r.credentials="include":t.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function a(t){if(t.ep)return;t.ep=!0;const r=n(t);fetch(t.href,r)}})();const P="50117384-0c3e90572e841b6f3be625418",E="https://pixabay.com/api/",f=40,S=document.getElementById("search-form"),p=document.querySelector(".gallery"),h=document.querySelector(".loader"),u=document.querySelector(".load-more");let s=1,d="",m=0,l;S.addEventListener("submit",async e=>{e.preventDefault(),d=e.target.searchQuery.value.trim(),d&&(s=1,p.innerHTML="",b(),g(),await y(),L())});u.addEventListener("click",async()=>{s++,g(),await y(),L()});async function y(){try{const e=await w.get(E,{params:{key:P,q:d,image_type:"photo",orientation:"horizontal",safesearch:!0,page:s,per_page:f}}),o=e.data.hits;if(m=e.data.totalHits,o.length===0&&s===1){c.error({title:"Oops",message:"Sorry, there are no images matching your search query. Please try again!"});return}const n=o.map(M).join("");p.insertAdjacentHTML("beforeend",n),l?l.refresh():l=new v(".gallery a");const a=Math.ceil(m/f);s>=a?(b(),c.info({title:"End of Results",message:"We're sorry, but you've reached the end of search results."})):O()}catch{c.error({title:"Error",message:"Something went wrong. Please try again later."})}}function M(e){return`
+    <a class="gallery-item" href="${e.largeImageURL}">
+      <img src="${e.webformatURL}" alt="${e.tags}" />
+      <div class="info">
+        <p><b>Likes:</b> ${e.likes}</p>
+        <p><b>Views:</b> ${e.views}</p>
+        <p><b>Comments:</b> ${e.comments}</p>
+        <p><b>Downloads:</b> ${e.downloads}</p>
+      </div>
+    </a>
+  `}function g(){h.classList.remove("is-hidden")}function L(){h.classList.add("is-hidden")}function O(){u.classList.remove("is-hidden")}function b(){u.classList.add("is-hidden")}
+//# sourceMappingURL=main-BjS0wByJ.js.map
