@@ -18,6 +18,12 @@ let currentQuery = '';
 let totalHits = 0;
 let lightbox;
 
+
+document.addEventListener('DOMContentLoaded', () => {
+  hideLoader();
+  hideLoadMore();
+});
+
 form.addEventListener('submit', async e => {
   e.preventDefault();
   currentQuery = e.target.searchQuery.value.trim();
@@ -35,8 +41,18 @@ form.addEventListener('submit', async e => {
 loadMoreBtn.addEventListener('click', async () => {
   currentPage++;
   showLoader();
+
+  const prevHeight = gallery.scrollHeight;
+
   await fetchImages();
   hideLoader();
+
+  const newHeight = gallery.scrollHeight;
+  const scrollOffset = newHeight - prevHeight - 100; 
+  window.scrollBy({
+    top: scrollOffset,
+    behavior: 'smooth',
+  });
 });
 
 async function fetchImages() {
